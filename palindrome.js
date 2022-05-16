@@ -21,5 +21,3 @@
 
 };
 
-isPalindrome(9991)
-

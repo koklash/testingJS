@@ -1,0 +1,7 @@
+activeNode.foreach(elemement=>{
+            movment.foreach(mov=>{
+                let tmpY=
+                let tmpX=
+                grid(node.pos)
+            })
+        })
