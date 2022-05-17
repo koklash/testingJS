@@ -13,9 +13,9 @@
         }
      val=val.toString()
      if(val.length>1)
-      return new ListNode(val.charAt(0),numberToListNodeConverter(val.substring(1)))
+      return new ListNode(parseInt(val.charAt(val.length-1)),numberToListNodeConverter(parseInt(val.substring(0,val.length-1))))
      else
-      return new ListNode(val)
+      return new ListNode(parseInt(val))
  }
 
 
@@ -91,4 +91,4 @@ var addTwoNumbers = function(l1, l2) {
    
 }
 
-module.exports =  {numberToListNodeConverter, addTwoNumbers}
+module.exports =  {numberToListNodeConverter, addTwoNumbers, overflowed}
