@@ -40,7 +40,7 @@ function overflowed(listElement){
 }
 
 
-var addTwoNumbers = function(l1, l2) {
+function addTwoNumbers(l1, l2) {
    let overflow = false;
    let tmp = l1.val + l2.val;
    if(tmp>=10){

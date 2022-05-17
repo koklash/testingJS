@@ -53,3 +53,14 @@ describe("testing the overflowed function", ()=>{
             "next":{"next":{"next":{"next":null, "val":1},"val":0},"val":0},"val":0})
         })
 })
+
+describe("testing the addTwoNumbers function", ()=>{
+    test("testing the adding two number function",()=>{
+        const l1=new list.numberToListNodeConverter(123)
+        const l2= new list.numberToListNodeConverter(654)
+        
+        expect(list.addTwoNumbers(l1,l2)).toEqual({
+            "val": 7, "next":{"val":7, "next":{"val":7, "next": null}}
+        })
+    })
+})
