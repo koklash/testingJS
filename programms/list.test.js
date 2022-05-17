@@ -1,5 +1,23 @@
 const list = require("./list.js")
 
+describe("testing the ListNode function", ()=>{
+    test("what happens if a ListNode gets created without any parameters",()=>{
+        expect(new list.ListNode()).toEqual({"val": 0, "next":null})
+    })
+
+    test("what happens if a ListNode gets created with only the first parameter, it should use the parameter as the value",()=>{
+        expect(new list.ListNode(10)).toEqual({"val": 10, "next":null})
+    })
+
+    test("what happens if a ListNode gets created with only the second parameter, it should use the parameter as the value",()=>{
+        expect(new list.ListNode(undefined, new list.ListNode())).toEqual({"val": 0, "next":{"val":0, "next":null}})
+    })
+    
+
+    test("what happens if a ListNode gets created with two parameter, it should use the first parameter as the value and the second as the next parameter",()=>{
+        expect(new list.ListNode(10, new list.ListNode())).toEqual({"val": 10, "next":{"val":0, "next":null}})
+    })
+})
 
 describe("testing the numberToListNodeConvert function", ()=>{
 
@@ -11,6 +29,7 @@ describe("testing the numberToListNodeConvert function", ()=>{
     test('test if the function throws an error if we give it a negative number', () => {
         expect(() => {list.numberToListNodeConverter(-2)}).toThrow("no negative number allowed")
     })
+    
 
     test('test if the function throws an error if we give it a string', () => {
         expect(() => {list.numberToListNodeConverter("abc")}).toThrow("not a number")
