@@ -10,7 +10,9 @@
  function numberToListNodeConverter(val){
      if(val<0) {
          throw new TypeError('no negative number allowed')
-        }
+     }else if(isNaN(val)){
+        throw new TypeError('not a number')
+     }
      val=val.toString()
      if(val.length>1)
       return new ListNode(parseInt(val.charAt(val.length-1)),numberToListNodeConverter(parseInt(val.substring(0,val.length-1))))
