@@ -63,4 +63,22 @@ describe("testing the addTwoNumbers function", ()=>{
             "val": 7, "next":{"val":7, "next":{"val":7, "next": null}}
         })
     })
+
+    test("testing the adding two number function where one didgit will overflow",()=>{
+        const l1=new list.numberToListNodeConverter(126)
+        const l2= new list.numberToListNodeConverter(654)
+        
+        expect(list.addTwoNumbers(l1,l2)).toEqual({
+            "val": 0, "next":{"val":8, "next":{"val":7, "next": null}}
+        })
+    })
+
+    test("testing the adding two number function where the result will surpass the 3 digits length",()=>{
+        const l1=new list.numberToListNodeConverter(626)
+        const l2= new list.numberToListNodeConverter(654)
+        
+        expect(list.addTwoNumbers(l1,l2)).toEqual({
+            "val": 0, "next":{"val":8, "next":{"val":2, "next":{"val":1, "next": null}}}
+        })
+    })
 })
